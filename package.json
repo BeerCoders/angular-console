@@ -1,0 +1,28 @@
+{
+  "name": "angular-console",
+  "version": "0.0.1",
+  "description": "console to generate project structure and models, controllers ect.",
+  "main": "console.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeerCoders/angular-console.git"
+  },
+  "keywords": [
+    "angular",
+    "generator"
+  ],
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^1.21.5",
+    "prompt": "^0.2.14"
+  },
+  "author": "BeerCoders (https://github.com/BeerCoders)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BeerCoders/angular-console/issues"
+  },
+  "homepage": "https://github.com/BeerCoders/angular-console#readme"
+}
