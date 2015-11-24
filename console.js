@@ -1,3 +1,5 @@
+//var cmd = require('./console.js');
+
 var generator = {
     install: function () {
         var prompt = require('prompt');
@@ -5,12 +7,21 @@ var generator = {
         var properties = [
             {
                 name: 'username',
+                type: 'string',
+                description: 'Enter your name',
                 validator: /^[a-zA-Z\s\-]+$/,
-                warning: 'Username must be only letters, spaces, or dashes'
+                warning: 'Username must be only letters, spaces, or dashes',
+                hidden: true,
+                required: true,
+                default: ''
             },
             {
                 name: 'password',
-                hidden: true
+                type: 'string',
+                description: 'Enter your password',
+                hidden: true,
+                required: true,
+                default: ''
             }
         ];
 
@@ -34,4 +45,4 @@ var generator = {
 
 module.exports = function () {
     generator.install();
-};
+}();
