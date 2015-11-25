@@ -15,7 +15,12 @@ var run = function (answers) {
         return 1;
     }
 
-    console.log(answers);
+    switch (answers.action) {
+        case 'install':
+            var installer = require('./installer.js');
+            installer.install();
+            break;
+    }
 };
 
 module.exports = {
