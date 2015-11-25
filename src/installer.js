@@ -62,10 +62,10 @@ var structure = [
         }
 
         var args = {
-            dir:dir,
-            appName:appName,
-            author:author,
-            email:email,
+            dir: dir,
+            appName: appName,
+            author: author,
+            email: email,
         };
 
         mkdir(dir);
