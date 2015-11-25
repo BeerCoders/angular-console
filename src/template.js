@@ -1,41 +1,17 @@
 var
-    gitignore = {
-
-    },
-    bowerrc = {
-
-    },
-    bowerJson = {
-
-    },
-    indexHtml = {
-
-    },
-    appJs = {
-
-    },
-    controller = {
-
-    },
-    directive = {
-
-    },
-    model = {
-
-    },
-    modelProvider = {
-
-    },
-    service = {
-
-    },
-    view = {
-
-    },
-    filter = {
-
-    }
-;
+    gitignore = {},
+    bowerrc = {},
+    bowerJson = {},
+    indexHtml = {},
+    appJs = {},
+    controller = {},
+    directive = {},
+    model = {},
+    modelProvider = {},
+    service = {},
+    view = {},
+    filter = {}
+    ;
 module.exports = {
     gitignore: gitignore,
     bowerrc: bowerrc,

@@ -1,4 +1,4 @@
-var create = function(template,args) {
+var create = function (template, args) {
 
 };
 
