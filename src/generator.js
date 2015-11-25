@@ -1,46 +1,23 @@
-//var cmd = require('./console.js');
+/**
+ * This file is part of the angular-console package.
+ *
+ * (c) Rafał Lorenz <vardius@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-var install = function () {
-    var prompt = require('prompt');
+var run = function (answers) {
+    "use strict";
 
-    var properties = [
-        {
-            name: 'username',
-            type: 'string',
-            description: 'Enter your name',
-            validator: /^[a-zA-Z\s\-]+$/,
-            warning: 'Username must be only letters, spaces, or dashes',
-            hidden: true,
-            required: true,
-            default: ''
-        },
-        {
-            name: 'password',
-            type: 'string',
-            description: 'Enter your password',
-            hidden: true,
-            required: true,
-            default: ''
-        }
-    ];
-
-    prompt.start();
-
-    prompt.get(properties, function (err, result) {
-        if (err) {
-            return onErr(err);
-        }
-        console.log('Command-line input received:');
-        console.log('  Username: ' + result.username);
-        console.log('  Password: ' + result.password);
-    });
-
-    function onErr(err) {
-        console.log(err);
+    if (!answers.confirm) {
+        console.log('Command canceled');
         return 1;
     }
+
+    console.log(answers);
 };
 
 module.exports = {
-    install: install
+    run: run
 };
