@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 
-var generator = require('./console.js');
+var generator = require('./src/generator.js');
 
 generator.install();
