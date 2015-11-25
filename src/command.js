@@ -16,6 +16,7 @@ var start = function () {
         generator.run({
             action: args[0],
             add: args[1],
+            name: args[2],
             confirm: true
         });
     } else {
@@ -74,6 +75,11 @@ var start = function () {
                 when: function (answers) {
                     return (answers.action === 'create');
                 }
+            },
+            {
+                type: "name",
+                name: "text",
+                message: "Pick name"
             },
             {
                 type: "confirm",
