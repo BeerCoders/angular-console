@@ -6,7 +6,7 @@
         .controller('{{ controllerName }} + Controller', {{ controllerName }} + Controller);
 
     {{ controllerName }} + Controller.$inject = [
-        '',
+
     ];
 
     function {{ controllerName }} + Controller() {
