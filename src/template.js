@@ -15,7 +15,8 @@ var
 
     },
     controller = {
-
+        template: '../templates/controller.js',
+        require: ['appName','controllerName']
     },
     directive = {
 

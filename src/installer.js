@@ -27,7 +27,7 @@ var structure = [
         }
     },
     createGitignore = function () {
-
+        create.create(template.gitignore,args);
     },
     createBowerrc = function () {
 
