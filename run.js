@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 
-var generator = require('./src/generator.js');
+var command = require('./src/command.js');
 
-generator.install();
+command.start();
