@@ -1,17 +1,17 @@
 var fs = require('fs-extra');
+var create = require('./create.js');
+var template = require('./template.js');
 
 var structure = [
-        'src',
         'src/controllers',
         'src/directives',
-        'src/models',
+        'src/filters',
         'src/models/provider',
         'src/services',
         'src/views',
-        'tests',
         'tests/controllers',
         'tests/directives',
-        'tests/models',
+        'tests/filters',
         'tests/models/provider',
         'tests/services'
     ],
@@ -26,17 +26,56 @@ var structure = [
             generator.mkdir(dir + "/" + structure[path]);
         }
     },
-    install = function (dir, name, author, email) {
+    createGitignore = function () {
+
+    },
+    createBowerrc = function () {
+
+    },
+    createBowerJson = function (args) {
+
+    },
+    createIndexHtml = function (args) {
+
+    },
+    createAppJs = function (args) {
+
+    },
+    createController = function (args) {
+
+    },
+    install = function (dir, appName, author, email) {
 
         if (typeof dir == 'undefined') {
             dir = "sample";
         }
         if (typeof name == 'undefined') {
-            name = "sample";
+            appName = "sample";
         }
 
-        generator.mkdir(dir);
-        generator.createStructure(generator.structure, dir);
+        if (typeof author == 'undefined') {
+            author = "sample";
+        }
+
+        if (typeof email == 'undefined') {
+            email = "sample@sample.com";
+        }
+
+        var args = {
+            dir:dir,
+            appName:appName,
+            author:author,
+            email:email,
+        };
+
+        mkdir(dir);
+        createStructure(generator.structure, dir);
+        createGitignore();
+        createBowerrc();
+        createBowerJson(args);
+        createIndexHtml(args);
+        createAppJs(args);
+        createController(args);
     };
 
 module.exports = {
