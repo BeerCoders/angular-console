@@ -3,13 +3,13 @@
 
     angular
         .module('services')
-        .factory('{{ serviceName }} + Service', {{ serviceName }} + Service);
+        .factory('{{serviceName}} + Service', {{serviceName}} + Service);
 
-    {{ serviceName }} + Service.$inject = [
+    {{serviceName}} + Service.$inject = [
     
     ];
 
-    function {{ serviceName }} + Service + () {
+    function {{serviceName}} + Service + () {
 
         var service = {};
  

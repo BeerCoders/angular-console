@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="{{ name }}" lang="en">
+<html ng-app="{{appName}}" lang="en">
 <head>
     <base href="/">
     <meta charset="utf-8">
-    <title>{{ name }}</title>
+    <title>{{appName}}</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>

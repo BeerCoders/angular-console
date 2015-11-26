@@ -2,14 +2,14 @@
     'use strict';
 
     angular
-        .module('{{ appName }}')
-        .controller('{{ controllerName }} + Controller', {{ controllerName }} + Controller);
+        .module('{{appName}}')
+        .controller('{{name}}Controller', {{name}}Controller);
 
-    {{ controllerName }} + Controller.$inject = [
+    {{name}}Controller.$inject = [
 
     ];
 
-    function {{ controllerName }} + Controller() {
+    function {{name}}Controller() {
 
         var vm = this;
 

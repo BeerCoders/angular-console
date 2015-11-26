@@ -3,15 +3,15 @@
 
     angular
         .module('models')
-        .factory('{{ modelName }} + Model', {{ modelName }});
+        .factory('{{name}}Model', {{name}});
 
-    {{ modelName }} + .$inject = [
+    {{name}}.$inject = [
         'ModelProvider'
     ];
 
-    function {{ modelName }} + (ModelProvider) {
+    function {{name}}(ModelProvider) {
 
-        var model = ModelProvider.getModel('/{{ modelName }}/:id');
+        var model = ModelProvider.getModel('/{{namePlural}}/:id');
 
         function getAll(params) {
             return model.getAll(params);
