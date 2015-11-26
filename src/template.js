@@ -9,20 +9,33 @@ var
 
     },
     indexHtml = {
-
+        type: '',
+        ext: '.html',
+        template: 'templates/index.html.template',
+        require: ['appName'],
+        outputDir: '/',
+        fileName: 'index'
     },
     appJs = {
 
     },
     controller = {
-        template: '../templates/controller.js',
-        require: ['appName','controllerName']
+        type: 'Controller',
+        ext: '.js',
+        template: 'templates/controller.js.template',
+        require: ['appName','name'],
+        outputDir: '/src/controllers/'
     },
     directive = {
 
     },
     model = {
-
+        type: '',
+        ext: '.js',
+        template: 'templates/model.js.template',
+        require: ['name'],
+        pluralize: ['name'],
+        outputDir: '/src/models/'
     },
     modelProvider = {
 

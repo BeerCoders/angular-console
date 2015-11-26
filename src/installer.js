@@ -23,11 +23,11 @@ var structure = [
     },
     createStructure = function (structure, dir) {
         for (var path in structure) {
-            generator.mkdir(dir + "/" + structure[path]);
+            mkdir(dir + "/" + structure[path]);
         }
     },
-    createGitignore = function () {
-        create.create(template.gitignore,args);
+    createGitignore = function (args) {
+        //create.create(template.gitignore, args);
     },
     createBowerrc = function () {
 
@@ -36,13 +36,18 @@ var structure = [
 
     },
     createIndexHtml = function (args) {
-
+        create.create(template.indexHtml, args);
     },
     createAppJs = function (args) {
 
     },
     createController = function (args) {
-
+        args.name = 'Home';
+        create.create(template.controller, args);
+    },
+    createModel = function (args) {
+        args.name = 'Regex';
+        create.create(template.model, args);
     },
     install = function (dir, appName, author, email) {
 
@@ -63,19 +68,20 @@ var structure = [
 
         var args = {
             dir: dir,
-            appName: appName,
+            appName: appName + "App",
             author: author,
-            email: email,
+            email: email
         };
 
         mkdir(dir);
-        createStructure(generator.structure, dir);
-        createGitignore();
-        createBowerrc();
-        createBowerJson(args);
+        createStructure(structure, dir);
+        //createGitignore();
+        //createBowerrc();
+        //createBowerJson(args);
         createIndexHtml(args);
-        createAppJs(args);
+        //createAppJs(args);
         createController(args);
+        createModel(args);
     };
 
 module.exports = {

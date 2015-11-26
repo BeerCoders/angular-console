@@ -15,10 +15,12 @@
     "generator"
   ],
   "devDependencies": {
+    "bower": "^1.4.2",
     "chai": "^1.9.2",
     "fs-extra": "^0.26.2",
     "inquirer": "^0.11.0",
-    "mocha": "^1.21.5"
+    "mocha": "^1.21.5",
+    "pluralize": "^1.2.1"
   },
   "author": "BeerCoders (https://github.com/BeerCoders)",
   "license": "MIT",
