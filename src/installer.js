@@ -45,6 +45,10 @@ var structure = [
         args.name = 'Home';
         create.create(template.controller, args);
     },
+    createModel = function (args) {
+        args.name = 'Regex';
+        create.create(template.model, args);
+    },
     install = function (dir, appName, author, email) {
 
         if (typeof dir == 'undefined') {
@@ -77,6 +81,7 @@ var structure = [
         createIndexHtml(args);
         //createAppJs(args);
         createController(args);
+        createModel(args);
     };
 
 module.exports = {
