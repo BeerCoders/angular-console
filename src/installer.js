@@ -55,21 +55,10 @@ var structure = [
         create.create(template.model, clonedArgs);
     },
     install = function (dir, appName, author, email) {
-
-        if (typeof dir == 'undefined') {
-            dir = "sample";
-        }
-        if (typeof name == 'undefined') {
-            appName = "sample";
-        }
-
-        if (typeof author == 'undefined') {
-            author = "sample";
-        }
-
-        if (typeof email == 'undefined') {
-            email = "sample@sample.com";
-        }
+        dir = dir !== (void 0) ? dir : 'sample';
+        appName = dir !== (void 0) ? dir : 'sample';
+        author = dir !== (void 0) ? dir : 'sample';
+        email = dir !== (void 0) ? dir : 'sample@sample.com';
 
         var args = {
             dir: dir,
