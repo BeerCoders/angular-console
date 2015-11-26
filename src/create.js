@@ -27,7 +27,13 @@ var create = function(template,args) {
 };
 
 var checkArgs = function(require, args) {
-return true;
+    var search;
+    for (search in args) {
+        if(!args.hasOwnProperty(search)){
+            return false;
+        }
+    }
+    return true;
 };
 
 module.exports = {
