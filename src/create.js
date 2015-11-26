@@ -1,9 +1,11 @@
 var fs = require('fs-extra');
-var pluralize = require('pluralize');
+var pluralizer = require('pluralize');
 
 var create = function(template, args) {
-    if(checkArgs(template.require, args) && pluralize(template.pluralize, args)) {
 
+    args = checkPluralize(template.pluralize, args);
+
+    if(checkArgs(template.require, args)) {
         fs.readFile(template.template, "UTF-8", function (err, data) {
             if (err) {
                 console.log(err);
@@ -30,24 +32,29 @@ var create = function(template, args) {
 
 var checkArgs = function(require, args) {
     var search;
+
     for (search in require) {
         if(!args.hasOwnProperty(require[search])){
             return false;
         }
     }
+    
     return true;
 };
 
-var pluralize = function(pluralize, args) {
+var checkPluralize = function(pluralize, args) {
     var search;
+
     for (search in pluralize) {
         if(args.hasOwnProperty(pluralize[search])){
-            args[pluralize[search]] + 'Plural' ] = pluralize(args[pluralize[search]]);
+            var key = pluralize[search] + 'Plural';
+            args[key] = pluralizer(args[pluralize[search]]).toLowerCase();
         } else {
             return false;
         }
     }
-    return true;
+
+    return args;
 };
 
 module.exports = {
