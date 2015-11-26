@@ -1,7 +1,7 @@
 var fs = require('fs-extra');
 var create = require('./create.js');
 var template = require('./template.js');
-
+var cloner = require('./cloner.js');
 var structure = [
         'src/controllers',
         'src/directives',
@@ -27,27 +27,32 @@ var structure = [
         }
     },
     createGitignore = function (args) {
+        var clonedArgs = (cloner.cloneObject(args));
         //create.create(template.gitignore, args);
     },
     createBowerrc = function () {
 
     },
     createBowerJson = function (args) {
+        var clonedArgs = (cloner.cloneObject(args));
 
     },
     createIndexHtml = function (args) {
-        create.create(template.indexHtml, args);
+        var clonedArgs = (cloner.cloneObject(args));
+        create.create(template.indexHtml, clonedArgs);
     },
     createAppJs = function (args) {
 
     },
     createController = function (args) {
-        args.name = 'Home';
-        create.create(template.controller, args);
+        var clonedArgs = (cloner.cloneObject(args));
+        clonedArgs.name = 'Home';
+        create.create(template.controller, clonedArgs);
     },
     createModel = function (args) {
-        args.name = 'Regex';
-        create.create(template.model, args);
+        var clonedArgs = (cloner.cloneObject(args));
+        clonedArgs.name = 'Regex';
+        create.create(template.model, clonedArgs);
     },
     install = function (dir, appName, author, email) {
 
