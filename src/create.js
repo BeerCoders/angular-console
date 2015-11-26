@@ -28,8 +28,8 @@ var create = function(template,args) {
 
 var checkArgs = function(require, args) {
     var search;
-    for (search in args) {
-        if(!args.hasOwnProperty(search)){
+    for (search in require) {
+        if(!args.hasOwnProperty(require[search])){
             return false;
         }
     }
