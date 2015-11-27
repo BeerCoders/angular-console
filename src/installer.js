@@ -53,6 +53,13 @@ var structure = [
         var clonedArgs = (cloner.cloneObject(args));
         clonedArgs.name = 'Regex';
         create.create(template.model, clonedArgs);
+        fs.exists(args.dir + '/src/models/provider/ModelProvider.js', function (exists) {
+            if(exists) {
+                console.log("ModelProvider.js exist")
+            } else {
+                create.create(template.modelProvider,clonedArgs);
+            }
+        });
     },
     install = function (dir, appName, author, email) {
         dir = dir !== (void 0) ? dir : 'sample';
