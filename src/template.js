@@ -1,9 +1,21 @@
 var
     gitignore = {
-
+        type: '',
+        ext: '',
+        template: 'templates/gitignore.template',
+        require: [],
+        pluralize: [],
+        outputDir: '/',
+        fileName: '.gitignore'
     },
     bowerrc = {
-
+        type: '',
+        ext: '',
+        template: 'templates/bowerrc.template',
+        require: [],
+        pluralize: [],
+        outputDir: '/',
+        fileName: '.bowerrc'
     },
     bowerJson = {
 
@@ -38,7 +50,13 @@ var
         outputDir: '/src/models/'
     },
     modelProvider = {
-
+        type: 'Provider',
+        ext: '.js',
+        template: 'templates/modelProvider.js.template',
+        require: [],
+        pluralize: [],
+        outputDir: '/src/models/provider/',
+        fileName: 'Model'
     },
     service = {
 

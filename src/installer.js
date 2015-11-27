@@ -28,10 +28,11 @@ var structure = [
     },
     createGitignore = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
-        //create.create(template.gitignore, args);
+        create.create(template.gitignore, clonedArgs);
     },
-    createBowerrc = function () {
-
+    createBowerrc = function (args) {
+        var clonedArgs = (cloner.cloneObject(args));
+        create.create(template.bowerrc, clonedArgs);
     },
     createBowerJson = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
@@ -53,6 +54,13 @@ var structure = [
         var clonedArgs = (cloner.cloneObject(args));
         clonedArgs.name = 'Regex';
         create.create(template.model, clonedArgs);
+        fs.exists(args.dir + '/src/models/provider/ModelProvider.js', function (exists) {
+            if(exists) {
+                console.log("ModelProvider.js exist")
+            } else {
+                create.create(template.modelProvider,clonedArgs);
+            }
+        });
     },
     install = function (dir, appName, author, email) {
         dir = dir !== (void 0) ? dir : 'sample';
@@ -69,8 +77,8 @@ var structure = [
 
         mkdir(dir);
         createStructure(structure, dir);
-        //createGitignore();
-        //createBowerrc();
+        createGitignore(args);
+        createBowerrc(args);
         //createBowerJson(args);
         createIndexHtml(args);
         //createAppJs(args);
