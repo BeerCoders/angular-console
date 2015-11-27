@@ -1,0 +1,23 @@
+(function () {
+    'use strict';
+
+    angular
+        .module('tacticApp', [
+            'route-provider',
+            'state-provider',
+            'services',
+            'models'
+        ])
+        .constant("CONFIG", {
+            url: "http://dev.example",
+            domain: "http://dev.example",
+            port: "80"
+        })
+    ;
+
+    angular.module('route-provider', ['ngRoute']);
+    angular.module('state-provider', ['ui.router']);
+    angular.module('services', []);
+    angular.module('models', []);
+
+})();
