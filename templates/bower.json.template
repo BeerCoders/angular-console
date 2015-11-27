@@ -1,0 +1,21 @@
+{
+  "name": "{{appName}}",
+  "version": "{{version}}",
+  "authors": [
+    "{{author}} <{{email}}>"
+  ],
+  "description": "{{description}}",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "{{license}}",
+  "homepage": "{{homepage}}",
+  "ignore": [
+    "**/.*",
+    "vendor",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular-ui-router": "~0.2.15",
+  }
+}

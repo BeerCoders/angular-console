@@ -36,7 +36,7 @@ var structure = [
     },
     createBowerJson = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
-
+        create.create(template.bowerJson, clonedArgs);
     },
     createIndexHtml = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
@@ -62,24 +62,32 @@ var structure = [
             }
         });
     },
-    install = function (dir, appName, author, email) {
+    install = function (dir, appName, version, description, license, homepage, author, email) {
         dir = dir !== (void 0) ? dir : 'sample';
-        appName = dir !== (void 0) ? dir : 'sample';
-        author = dir !== (void 0) ? dir : 'sample';
-        email = dir !== (void 0) ? dir : 'sample@sample.com';
+        appName = appName !== (void 0) ? dir : 'sample';
+        author = author !== (void 0) ? dir : 'sample';
+        email = email !== (void 0) ? dir : 'sample@sample.com';
+        version = version !== (void 0) ? dir : '0.0.1';
+        description = description !== (void 0) ? dir : 'Sample Description';
+        license = license !== (void 0) ? dir : 'MIT https://opensource.org/licenses/MIT';
+        homepage = homepage !== (void 0) ? dir : 'https://github.com/BeerCoders';
 
         var args = {
             dir: dir,
             appName: appName + "App",
             author: author,
-            email: email
+            email: email,
+            version: version,
+            description: description,
+            license: license,
+            homepage: homepage
         };
 
         mkdir(dir);
         createStructure(structure, dir);
         createGitignore(args);
         createBowerrc(args);
-        //createBowerJson(args);
+        createBowerJson(args);
         createIndexHtml(args);
         createAppJs(args);
         createController(args);
