@@ -58,7 +58,11 @@ var
        
     },
     directive = {
-
+        type: '',
+        ext: '.js',
+        template: 'templates/src/directive.js.template',
+        require: ['appName','name'],
+        outputDir: '/src/directives/'
     },
     model = {
         type: '',
@@ -85,13 +89,33 @@ var
         fileName: 'Model'
     },
     service = {
-
+        type: 'Service',
+        ext: '.js',
+        template: 'templates/src/service.js.template',
+        require: ['name'],
+        pluralize: ['name'],
+        outputDir: '/src/services/',
+        test: {
+            type: 'ServiceTest',
+            ext: '.js',
+            require: ['appName','name'],
+            template: 'templates/tests/service.js.template',
+            outputDir: '/tests/services/'
+        }
     },
     view = {
-
+        type: 'View',
+        ext: '.html',
+        template: 'templates/src/view.html.template',
+        require: ['appName','name'],
+        outputDir: '/src/views/'
     },
     filter = {
-
+        type: '',
+        ext: '.js',
+        template: 'templates/src/filter.js.template',
+        require: ['appName','name'],
+        outputDir: '/src/filters/'
     }
 ;
 module.exports = {

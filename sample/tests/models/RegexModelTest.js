@@ -38,4 +38,37 @@ describe('Testing Regex', function() {
 	    expect(result).toEqual(returnData);
 	}); 
 
+	it('REST Regex getById action [GET]', function (){
+
+		var returnData = true;
+	    
+	    httpBackend
+	    	.expectGET(CONFIG.domain + '/regexes/1')
+	    	.respond(returnData);
+	    
+	    var returnedPromise = Regex.getAll();
+	    
+	    var result;
+	    returnedPromise.then(function(response) {
+	      result = response;
+	    });
+	    
+	    httpBackend.flush();
+	    
+	    expect(result).toEqual(returnData);
+
+	});
+
+	it('REST Regex create action [POST]', function (){
+
+	});
+
+	it('REST Regex update action [PUT]', function (){
+
+	});
+
+	it('REST Regex remove action [DELETE]', function (){
+
+	});
+
 });

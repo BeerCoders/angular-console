@@ -49,6 +49,7 @@ var structure = [
         var clonedArgs = (cloner.cloneObject(args));
         clonedArgs.name = 'Home';
         create.create(template.controller, clonedArgs);
+        create.create(template.view, clonedArgs);
     },
     createModel = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
@@ -61,6 +62,21 @@ var structure = [
                 create.create(template.modelProvider,clonedArgs);
             }
         });
+    },
+    createService = function (args) {
+        var clonedArgs = (cloner.cloneObject(args));
+        clonedArgs.name = 'Sample';
+        create.create(template.service, clonedArgs);
+    },
+    createDirective = function (args) {
+        var clonedArgs = (cloner.cloneObject(args));
+        clonedArgs.name = 'Directive';
+        create.create(template.directive, clonedArgs);
+    },
+    createFilter = function (args) {
+        var clonedArgs = (cloner.cloneObject(args));
+        clonedArgs.name = 'Filter';
+        create.create(template.filter, clonedArgs);
     },
     install = function (dir, appName, version, description, license, homepage, author, email) {
         dir = dir !== (void 0) ? dir : 'sample';
@@ -92,6 +108,9 @@ var structure = [
         createAppJs(args);
         createController(args);
         createModel(args);
+        createService(args);
+        createDirective(args);
+        createFilter(args);
     };
 
 module.exports = {

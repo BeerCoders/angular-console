@@ -1,0 +1,27 @@
+describe('Testing {{name}}', function() {
+
+	var {{name}},
+		httpBackend;
+
+	beforeEach(function(){
+		module('{{appName}}');
+
+		inject(function($httpBackend, CONFIG, _{{name}}_) {
+      		httpBackend = $httpBackend;
+      		CONFIG = CONFIG:
+      		{{name}} = _{{name}}_;
+    	});
+	});
+
+	// afterEach(function() {
+	//     httpBackend.verifyNoOutstandingExpectation();
+	//     httpBackend.verifyNoOutstandingRequest();
+ 	// });
+
+  	it('SERVICE TEST TEMP', function (){
+
+	}); 
+
+
+
+});
