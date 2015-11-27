@@ -18,7 +18,13 @@ var
         fileName: '.bowerrc'
     },
     bowerJson = {
-
+        type: '',
+        ext: '.json',
+        template: 'templates/bower.json.template',
+        require: ['appName', 'version', 'author', 'email', 'description', 'license', 'homepage' ],
+        pluralize: [],
+        outputDir: '/',
+        fileName: 'bower'
     },
     indexHtml = {
         type: '',
