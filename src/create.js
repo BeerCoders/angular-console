@@ -19,6 +19,9 @@ var create = function (template, args) {
                         return console.log(err);
                     }
                     console.log("The file was saved!");
+                    if (template.hasOwnProperty('test')){
+                        create(template.test, args);
+                    }
                 });
             }
 

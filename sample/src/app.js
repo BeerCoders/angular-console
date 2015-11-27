@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('tacticApp', [
+        .module('sampleApp', [
             'route-provider',
             'state-provider',
             'services',

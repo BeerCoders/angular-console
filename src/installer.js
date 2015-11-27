@@ -43,7 +43,7 @@ var structure = [
         create.create(template.indexHtml, clonedArgs);
     },
     createAppJs = function (args) {
-
+        create.create(template.appJs, args);
     },
     createController = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
@@ -81,7 +81,7 @@ var structure = [
         createBowerrc(args);
         //createBowerJson(args);
         createIndexHtml(args);
-        //createAppJs(args);
+        createAppJs(args);
         createController(args);
         createModel(args);
     };

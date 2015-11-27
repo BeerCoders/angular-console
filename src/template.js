@@ -29,14 +29,27 @@ var
         fileName: 'index'
     },
     appJs = {
-
+        type: '',
+        ext: '.js',
+        template: 'templates/src/app.js.template',
+        require: ['appName'],
+        outputDir: '/src/',
+        fileName: 'app'
     },
     controller = {
         type: 'Controller',
         ext: '.js',
-        template: 'templates/controller.js.template',
+        template: 'templates/src/controller.js.template',
         require: ['appName','name'],
-        outputDir: '/src/controllers/'
+        outputDir: '/src/controllers/',
+        test: {
+            type: 'ControllerTest',
+            ext: '.js',
+            require: ['appName','name'],
+            template: 'templates/tests/controller.js.template',
+            outputDir: '/tests/controllers/'
+        }
+       
     },
     directive = {
 
@@ -44,7 +57,7 @@ var
     model = {
         type: '',
         ext: '.js',
-        template: 'templates/model.js.template',
+        template: 'templates/src/model.js.template',
         require: ['name'],
         pluralize: ['name'],
         outputDir: '/src/models/'
@@ -52,7 +65,7 @@ var
     modelProvider = {
         type: 'Provider',
         ext: '.js',
-        template: 'templates/modelProvider.js.template',
+        template: 'templates/src/modelProvider.js.template',
         require: [],
         pluralize: [],
         outputDir: '/src/models/provider/',
