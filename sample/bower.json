@@ -1,0 +1,21 @@
+{
+  "name": "sampleApp",
+  "version": "0.0.1",
+  "authors": [
+    "sample <sample@sample.com>"
+  ],
+  "description": "Sample Description",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT https://opensource.org/licenses/MIT",
+  "homepage": "https://github.com/BeerCoders",
+  "ignore": [
+    "**/.*",
+    "vendor",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular-ui-router": "~0.2.15",
+  }
+}

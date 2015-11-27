@@ -66,7 +66,14 @@ var
         template: 'templates/src/model.js.template',
         require: ['name'],
         pluralize: ['name'],
-        outputDir: '/src/models/'
+        outputDir: '/src/models/',
+        test: {
+            type: 'ModelTest',
+            ext: '.js',
+            require: ['appName','name'],
+            template: 'templates/tests/model.js.template',
+            outputDir: '/tests/models/'
+        }
     },
     modelProvider = {
         type: 'Provider',

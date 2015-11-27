@@ -1,0 +1,74 @@
+describe('Testing {{name}}', function() {
+
+	var {{name}},
+		httpBackend;
+
+	beforeEach(function(){
+		module('{{appName}}');
+
+		inject(function($httpBackend, CONFIG, _{{name}}_) {
+      		httpBackend = $httpBackend;
+      		CONFIG = CONFIG:
+      		{{name}} = _{{name}}_;
+    	});
+	});
+
+	// afterEach(function() {
+	//     httpBackend.verifyNoOutstandingExpectation();
+	//     httpBackend.verifyNoOutstandingRequest();
+ 	// });
+
+  	it('REST {{name}} getAll action [GET]', function (){
+
+	    var returnData = true;
+	    
+	    httpBackend
+	    	.expectGET(CONFIG.domain + '/{{namePlural}}')
+	    	.respond(returnData);
+	    
+	    var returnedPromise = {{name}}.getAll();
+	    
+	    var result;
+	    returnedPromise.then(function(response) {
+	      result = response;
+	    });
+	    
+	    httpBackend.flush();
+	    
+	    expect(result).toEqual(returnData);
+	}); 
+
+	it('REST {{name}} getById action [GET]', function (){
+
+		var returnData = true;
+	    
+	    httpBackend
+	    	.expectGET(CONFIG.domain + '/{{namePlural}}/1')
+	    	.respond(returnData);
+	    
+	    var returnedPromise = {{name}}.getAll();
+	    
+	    var result;
+	    returnedPromise.then(function(response) {
+	      result = response;
+	    });
+	    
+	    httpBackend.flush();
+	    
+	    expect(result).toEqual(returnData);
+
+	});
+
+	it('REST {{name}} create action [POST]', function (){
+
+	});
+
+	it('REST {{name}} update action [PUT]', function (){
+
+	});
+
+	it('REST {{name}} remove action [DELETE]', function (){
+
+	});
+
+});
