@@ -28,10 +28,11 @@ var structure = [
     },
     createGitignore = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
-        //create.create(template.gitignore, args);
+        create.create(template.gitignore, clonedArgs);
     },
-    createBowerrc = function () {
-
+    createBowerrc = function (args) {
+        var clonedArgs = (cloner.cloneObject(args));
+        create.create(template.bowerrc, clonedArgs);
     },
     createBowerJson = function (args) {
         var clonedArgs = (cloner.cloneObject(args));
@@ -76,8 +77,8 @@ var structure = [
 
         mkdir(dir);
         createStructure(structure, dir);
-        //createGitignore();
-        //createBowerrc();
+        createGitignore(args);
+        createBowerrc(args);
         //createBowerJson(args);
         createIndexHtml(args);
         //createAppJs(args);

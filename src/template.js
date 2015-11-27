@@ -1,9 +1,21 @@
 var
     gitignore = {
-
+        type: '',
+        ext: '',
+        template: 'templates/gitignore.template',
+        require: [],
+        pluralize: [],
+        outputDir: '/',
+        fileName: '.gitignore'
     },
     bowerrc = {
-
+        type: '',
+        ext: '',
+        template: 'templates/bowerrc.template',
+        require: [],
+        pluralize: [],
+        outputDir: '/',
+        fileName: '.bowerrc'
     },
     bowerJson = {
 
